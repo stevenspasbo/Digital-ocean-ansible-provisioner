@@ -5,14 +5,24 @@
   pre_tasks:
     - include_vars: "{{ item }}"
       with_fileglob:
+        - default.config.yml
         - config.yml
-        - local.config.yml
+
+    - name: Update apt cache
+      apt: update_cache=yes
 
     - name: Install packages
       apt: "name={{ item }} state=latest"
-      with_items: "{{ apt_packages | list }}"
-      when: apt_packages | length
+      with_items: "{{ packages | list }}"
+      when: packages | length
 
     - name: Update installed packages
       apt:
         upgrade: dist
+
+    - include: tasks/create_users.yml
+
+
+  roles:
+    - geerlingguy.ntp
+    - geerlingguy.java

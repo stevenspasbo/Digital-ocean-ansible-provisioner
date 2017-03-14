@@ -1,0 +1,59 @@
+sudoers:
+  - steven
+
+packages:
+  - wget
+  - curl
+  - zsh
+  - fish
+  - aspell
+  - hunspell
+  - bash-completion
+  - git
+  - tmux
+  - htop
+  # - ack-grep
+  # - fortune
+  # - cowsay
+  # - silversearcher-ag
+  # - git
+  # - coreutils
+  # - diffutils
+  # - findutils
+  # - binutils
+  # - colordiff
+  # - elixir
+  # - erlang
+  # - gcc
+  # - g++
+  # - gdb
+  # - ffmpeg
+  # - global
+  # - gnu-smalltalk
+  # - gradle
+  # - hunspell
+  # - ispell
+  # - llvm
+  # - make
+  # - maven
+  # - mit-scheme
+  # - racket
+  # - ngrep
+  # - nmap
+  # - ocaml
+  # - pandoc
+  # - patchutils
+  # - perl
+  # - sbcl
+  # - scala
+  # - screen
+  # - socat
+  # - stow
+  # - sysdig
+  # - tree
+  # - unrar
+  # - weechat
+
+
+ntp_timezone: America/Los_Angeles
+# security_sudoers_passwordless: "{{ sudoers }}"
