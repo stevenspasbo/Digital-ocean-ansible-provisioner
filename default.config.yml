@@ -1,6 +1,14 @@
 sudoers:
   - steven
 
+security_sudoers_passwordless: "{{ sudoers }}"
+
+public_keys:
+  - name: steven
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjdw925b8x3iJkdCRMdp4pwyH4tSzFzZgB9HyOWv8GBcn6+NOnhcSSLwIjo4T8fjAiHPhP3gLzPrmVSa9Y/9mh6hXjLce1IQUkjrm2lVKM0Q9WKsWrlc6hfBhY4cAmEM/Tj+kHZ1T7j0rW1soPVcCgMrBOQHByZZJ0bZdeoSGnesaceP+EMGLApuTAL+2RtTp0Sq0pf0VsDu+hZukN0zxLqSP6iuKTJ1aCe3jWjfBouY5h5ERkB1ASI0sZcGqq1xaL1BDU/A6098cQsrVlNUD15CjmC6i55pfYx0bCf9k13OdhMTSTqH2QFlAJIs/ObhhvpZFD2NfKxSEY62EHqGAh steven.spasbo@SSPASBO-01.local
+  - name: steven
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6h07M0kyOyT60ThvVdLIlGHrCb7iUwh156j/MCNQJA5imVAmjRWFhyF33cZcpnA9DK9rUV3dJzN4m71twsNwW9HSrWoT9trtxJR2TX4kicJsbh1chbNfaGJY4FK08wEq9CFEzo9ipWleJUxkdqoqUzZ0LNOrg8se+xuHCpl7ESV1n8PJRx0oxeimXi8lGDj988Gf9YaV7nVSbXPG6fsueS2vChyplWlnSuguLKOipnr+b83mIT5FjyDgEJbqziP9lr4CRL2yUUTgc26ZrAPDcQ0GaolWjV5l9j5vlIf077cestvIAmT5BoneKhrfpAu1Jq8UZRaa5m3n+k+JAHky3 steven@h4xx0rb0x
+
 packages:
   - wget
   - curl
@@ -51,9 +59,9 @@ packages:
   # - stow
   # - sysdig
   # - tree
-  # - unrar
-  # - weechat
+  - unrar
+  - weechat
+
 
 
 ntp_timezone: America/Los_Angeles
-# security_sudoers_passwordless: "{{ sudoers }}"
