@@ -1,5 +1,4 @@
 ---
-
 - name: Make sure we have a 'wheel' group
   group:
     name: wheel
@@ -15,8 +14,13 @@
 
 - name: Add sudoers users to wheel group
   user:
-    name: "{{ item }}"
+    name: "{{ droplet_user }}"
     groups: wheel
     append: yes
-  with_items: "{{ sudoers }}"
+    shell: /usr/bin/zsh
 
+- name: Add SSH keys to user from github
+  authorized_key:
+    user: "{{ droplet_user }}"
+    state: present
+    key: "{{ public_key_location }}"
