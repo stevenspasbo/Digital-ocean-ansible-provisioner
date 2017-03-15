@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  become: yes
+  become_user: root
 
   pre_tasks:
     - include_vars: "{{ item }}"
@@ -9,7 +9,9 @@
         - config.yml
 
     - name: Update apt cache
-      apt: update_cache=yes
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
 
     - name: Install packages
       apt: "name={{ item }} state=latest"
@@ -22,7 +24,5 @@
 
     - include: tasks/create_users.yml
 
-
   roles:
     - geerlingguy.ntp
-    - geerlingguy.java
