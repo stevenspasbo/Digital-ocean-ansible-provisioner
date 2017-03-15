@@ -1,2 +1,4 @@
 - src: geerlingguy.java
+  path: ./extra-roles
 - src: geerlingguy.ntp
+  path: ./extra-roles
